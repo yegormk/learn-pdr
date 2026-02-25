@@ -1,0 +1,71 @@
+<!--<div style="-->
+<!--  display: flex;-->
+<!--  flex-direction: column;-->
+<!--  justify-content: center;-->
+<!--  align-items: center;-->
+<!--  gap: 12px;-->
+<!--">-->
+<!--  @for (sign of roadSigns; track sign.name; let idx = $index) {-->
+<!--    <div-->
+<!--        class="road-sign-container"-->
+<!--    >-->
+<!--      <img [src]="sign.svg" [alt]="sign.name" class="road-sign-img">-->
+<!--      @if (finalized) {-->
+<!--        <p>-->
+<!--          Назва: {{ sign.name }}-->
+<!--        </p>-->
+<!--        <p style="background-color: rgba(60,184,57,0.37); width: fit-content; border-radius: 5px; padding: 5px 10px">-->
+<!--          Категорія: {{ sign.category }}-->
+<!--        </p>-->
+<!--      }-->
+<!--      <mat-radio-group-->
+<!--        aria-label="Select an option"-->
+<!--        style="display: flex; flex-direction: column; gap: 10px; padding: 10px 0"-->
+<!--        (change)="newOptionChosen($event)"-->
+<!--      >-->
+<!--        @for (option of sign.availableOptions; track option.name) {-->
+<!--          <mat-radio-button [ngClass]="finalized ? (option.correct ? 'correct-answer' : 'wrong-answer') : ''" [value]="option.correct"-->
+<!--          >{{ option.name }}</mat-radio-button>-->
+<!--        }-->
+<!--      </mat-radio-group>-->
+
+<!--      <button matButton="elevated" (click)="finalizeReset()">{{ finalized ? 'Наступний' : 'Відповісти' }}</button>-->
+<!--    </div>-->
+<!--  }-->
+<!--</div>-->
+
+
+<div class="road-sign-wrapper">
+
+  @if (currentRoadSign) {
+    <div
+        class="road-sign-container"
+    >
+      <img [src]="currentRoadSign.svg" [alt]="currentRoadSign.name" class="road-sign-img">
+      @if (finalized()) {
+        <p>
+          Назва: {{ currentRoadSign.name }}
+        </p>
+        <p style="background-color: #e3a3036e; width: fit-content; border-radius: 5px; padding: 5px 10px">
+          Категорія: {{ currentRoadSign.category }}
+        </p>
+      }
+      <mat-radio-group
+          aria-label="Select an option"
+          class="road-sign-options"
+          [disabled]="finalized()"
+      >
+        @for (option of currentRoadSign.availableOptions; track option.name) {
+          <mat-radio-button
+              [ngClass]="finalized() ? (option.correct ? 'correct-answer' : 'wrong-answer') : ''"
+              [value]="option.name"
+          >
+            {{ option.name }}
+          </mat-radio-button>
+        }
+      </mat-radio-group>
+
+      <button matButton="elevated" (click)="finalizeReset()">{{ finalized() ? 'Наступний' : 'Відповісти' }}</button>
+    </div>
+  }
+</div>

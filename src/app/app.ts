@@ -1,9 +1,11 @@
-import { Component, signal } from '@angular/core';
+import {Component, OnInit, signal} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+
+import { RoadSignCard } from './components/road-sign-card/road-sign-card';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, RoadSignCard],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

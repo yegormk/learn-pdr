@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Слой_1"
+   data-name="Слой 1"
+   width="1820"
+   height="400"
+   viewBox="0 0 1820 400"
+   version="1.1"
+   sodipodi:docname="UA_road_sign_5.59.2.svg"
+   xml:space="preserve"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"><title
+     id="title1761">5.59 Покажчик напрямку</title><sodipodi:namedview
+     id="namedview569"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     showguides="false"
+     inkscape:zoom="0.37919572"
+     inkscape:cx="573.58242"
+     inkscape:cy="478.64464"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Слой_1"><sodipodi:guide
+       position="1671.7521,-200.10118"
+       orientation="1,0"
+       id="guide691"
+       inkscape:locked="false" /></sodipodi:namedview><defs
+     id="defs512"><style
+       id="style510">
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #04ae67;
+      }
+    </style></defs><g
+     id="g518"><path
+       class="cls-1"
+       d="M35.19336,399A34.13533,34.13533,0,0,1,1,365V35A34.13564,34.13564,0,0,1,35.19336,1H1419.76367l398,199-398,199Z"
+       id="path514"
+       style="fill:#000000" /><path
+       d="M1419.528,2l396,198-396,198H35.19341A33.13453,33.13453,0,0,1,2,365V35A33.13452,33.13452,0,0,1,35.19341,2H1419.528M1420,0H35.19341A35.09706,35.09706,0,0,0,0,35V365a35.09707,35.09707,0,0,0,35.19341,35H1420l400-200L1420,0Z"
+       id="path516" /></g><path
+     class="cls-2"
+     d="m 20,45 v 310 c 0,13.80712 11.192881,25 25,25 H 1415 L 1672,200 1415,20 H 45 C 31.192881,20 20,31.192881 20,45 Z"
+     id="path520"
+     sodipodi:nodetypes="ssscccss"
+     style="fill:#ffffff" /><g
+     id="g566" /><path
+     id="rect1429"
+     class="cls-2"
+     d="M 133.17647,72 C 125.87671,72 120,77.87671 120,85.17647 V 314.82353 C 120,322.12329 125.87671,328 133.17647,328 H 362.82353 C 370.12329,328 376,322.12329 376,314.82353 V 85.17647 C 376,77.87671 370.12329,72 362.82353,72 Z m 60.23529,31.24706 h 70.77648 c 30.74506,0 57.22352,23.59219 57.22352,61.3647 0,35.13722 -26.1754,62.11765 -57.22352,62.11765 h -45.17648 l 0.0625,70.02353 h -25.66251 z m 25.6,25.97647 v 70.4 h 41.0353 a 34.924969,34.924969 0 0 0 35.01176,-35.01177 c 0,-19.32547 -15.68629,-35.38823 -35.01176,-35.38823 z"
+     style="fill:#055c9d;stroke-width:0.376471" /><g
+     aria-label="+METRO"
+     id="text1744"
+     style="font-weight:bold;font-size:208.914px;line-height:1.5;font-family:'Road UA';-inkscape-font-specification:'Road UA Bold';fill-rule:evenodd;stroke-width:0.417825;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"><path
+       d="m 600.22029,195.61281 h -35.51538 v -35.51538 h -23.39837 v 35.51538 h -35.30646 v 23.18945 h 35.30646 v 35.51538 h 23.39837 v -35.51538 h 35.51538 z"
+       id="path1746" /><path
+       d="m 707.18429,237.60452 37.60452,-61.62963 v 97.14501 h 27.78557 V 126.8801 h -28.41231 l -41.99171,71.03076 -41.99172,-71.03076 h -28.4123 v 146.2398 h 27.78556 v -97.14501 l 37.60452,61.62963 z"
+       id="path1748" /><path
+       d="m 906.90596,248.25914 h -72.07534 v -36.76887 h 59.33158 v -24.86076 h -59.33158 v -34.88864 h 71.03077 V 126.8801 h -99.02524 v 146.2398 h 100.06981 z"
+       id="path1750" /><path
+       d="m 990.47144,151.74087 h 41.99176 V 126.8801 H 920.48525 v 24.86077 h 41.99171 V 273.1199 h 27.99448 z"
+       id="path1752" /><path
+       d="m 1081.9756,217.13095 h 24.8607 l 30.5015,55.98895 h 31.9638 l -34.8886,-61.2118 c 18.1755,-6.0585 28.2034,-20.68249 28.2034,-40.52932 0,-26.9499 -18.8023,-44.49868 -47.4235,-44.49868 h -61.2118 v 146.2398 h 27.9945 z m 26.741,-65.39008 c 16.922,0 25.4875,7.10307 25.4875,21.10031 0,13.78833 -8.5655,20.8914 -25.4875,20.8914 h -26.741 v -41.99171 z"
+       id="path1754" /><path
+       d="m 1247.0178,124.99988 c -39.6937,0 -62.4653,27.15882 -62.4653,75.00012 0,47.84131 22.7716,75.00013 62.4653,75.00013 39.6936,0 62.2563,-27.15882 62.2563,-75.00013 0,-47.8413 -22.5627,-75.00012 -62.2563,-75.00012 z m 0,24.86076 c 22.7716,0 34.2619,16.71312 34.2619,49.72154 0,33.42624 -11.4903,50.55718 -34.2619,50.55718 -22.7717,0 -34.2619,-17.13094 -34.2619,-50.13936 0,-33.21732 11.4902,-50.13936 34.2619,-50.13936 z"
+       id="path1756" /></g><metadata
+     id="metadata1759"><rdf:RDF><cc:Work
+         rdf:about=""><dc:title>5.59 Покажчик напрямку</dc:title></cc:Work></rdf:RDF></metadata></svg>
