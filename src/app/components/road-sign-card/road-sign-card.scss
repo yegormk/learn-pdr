@@ -1,0 +1,45 @@
+.road-sign-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.road-sign-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(221,221,221,0.43);
+  border-radius: 5px;
+  padding: 15px 10px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.road-sign-img {
+  max-width: 100%;
+  width: auto;
+  height: 150px;
+}
+
+.road-sign-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.correct-answer {
+  background-color: rgba(60,184,57,0.37);
+  width: fit-content;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.wrong-answer {
+  background-color: rgba(205, 79, 79, 0.37);
+  width: fit-content;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
