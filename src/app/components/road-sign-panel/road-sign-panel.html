@@ -1,0 +1,9 @@
+<div class="navigation-panel">
+  <mat-tab-group [selectedIndex]="currentCategory() | number" (selectedIndexChange)="changeMode($event)">
+    @for (option of categoryOptions; track option.id) {
+      <mat-tab [label]="option.name"></mat-tab>
+    }
+  </mat-tab-group>
+</div>
+
+<app-road-sign-card></app-road-sign-card>
