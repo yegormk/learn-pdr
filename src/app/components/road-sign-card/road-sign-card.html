@@ -1,14 +1,13 @@
 <div class="road-sign-wrapper">
-
   @if (currentRoadSign()) {
     <div
         class="road-sign-container"
     >
       <img [src]="currentRoadSign().svg" [alt]="currentRoadSign().name" class="road-sign-img">
-      @if (finalized()) {
-        <p>
-          Назва: {{ currentRoadSign().name }}
-        </p>
+      <p>
+        Назва: {{ finalized() ? (currentRoadSign().id + ' ' + currentRoadSign().name) : '🤔🤔🤔' }}
+      </p>
+      @if (currentCategory() === '0') {
         <p style="background-color: #e3a3036e; width: fit-content; border-radius: 5px; padding: 5px 10px">
           Категорія: {{ currentRoadSign().category }}
         </p>
@@ -34,8 +33,15 @@
         matButton="elevated"
         (click)="finalized() ? finalizeReset() : noWay()"
       >
-        Наступний
+        {{ (currentIndexOfRoadSign === lengthOfArrayOfRoadSigns && currentlyChosenOption) ?
+            'Умнічка, знову?)' : 'Наступний' }}
       </button>
+
+      @if (currentCategory() !== '0') {
+        <p>
+          {{ (currentIndexOfRoadSign + 1) + '/' + (lengthOfArrayOfRoadSigns + 1) }}
+        </p>
+      }
     </div>
   }
 </div>

@@ -36,8 +36,8 @@ export class RoadSignPanel implements OnInit {
   ];
 
   ngOnInit(): void {
-    this.stationsService.currentCategory.set(this.localStorage.getData(this.localStorageKey));
-    this.stationsService.selectMode(this.localStorage.getData(this.localStorageKey));
+    this.stationsService.currentCategory.set(this.localStorage.getData(this.localStorageKey) || '0');
+    this.stationsService.selectMode(this.localStorage.getData(this.localStorageKey) || '0');
   }
 
   public changeMode(typeOfSignsIDNumber: number): void {
