@@ -1,20 +1,15 @@
-import {Component, inject, OnInit} from '@angular/core';
-import {MatTab, MatTabGroup} from '@angular/material/tabs';
-import {DecimalPipe} from '@angular/common';
+import { Component, inject, OnInit } from '@angular/core';
+import { MatTab, MatTabGroup } from '@angular/material/tabs';
+import { DecimalPipe } from '@angular/common';
 
-import {RoadSignCard} from '../road-sign-card/road-sign-card';
-import {RoadSignsService} from '../../services/road-signs-service';
-import {LocalStorageService} from '../../services/local-storage-service';
-import {CategoryOption, TypeOfSignsID} from '../../interfaces/road-sign';
+import { RoadSignCard } from '../road-sign-card/road-sign-card';
+import { RoadSignsService } from '../../services/road-signs-service';
+import { LocalStorageService } from '../../services/local-storage-service';
+import { CategoryOption, TypeOfSignsID } from '../../interfaces/road-sign';
 
 @Component({
   selector: 'app-road-sign-panel',
-  imports: [
-    RoadSignCard,
-    MatTabGroup,
-    MatTab,
-    DecimalPipe
-  ],
+  imports: [RoadSignCard, MatTabGroup, MatTab, DecimalPipe],
   templateUrl: './road-sign-panel.html',
   styleUrl: './road-sign-panel.scss',
 })
@@ -36,7 +31,9 @@ export class RoadSignPanel implements OnInit {
   ];
 
   ngOnInit(): void {
-    this.stationsService.currentCategory.set(this.localStorage.getData(this.localStorageKey) || '0');
+    this.stationsService.currentCategory.set(
+      this.localStorage.getData(this.localStorageKey) || '0',
+    );
     this.stationsService.selectMode(this.localStorage.getData(this.localStorageKey) || '0');
   }
 

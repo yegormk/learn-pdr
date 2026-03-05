@@ -1,0 +1,6 @@
+if git diff --cached --name-only --diff-filter=ACMR | grep -q '^src/'; then
+  echo "Changes detected in project folder, running Angular lint tests..."
+  npm run lint
+else
+  echo "No staged changes in src/, skipping Angular tests."
+fi

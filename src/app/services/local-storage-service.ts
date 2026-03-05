@@ -24,7 +24,7 @@ export class LocalStorageService {
    * @param key
    */
   getData<T>(key: string): T {
-    return JSON.parse(<string>this.locStorage.getItem(key)) as T;
+    return JSON.parse(this.locStorage.getItem(key) as string) as T;
   }
 
   /**

@@ -1,5 +1,8 @@
 <div class="navigation-panel">
-  <mat-tab-group [selectedIndex]="currentCategory() | number" (selectedIndexChange)="changeMode($event)">
+  <mat-tab-group
+    [selectedIndex]="currentCategory() | number"
+    (selectedIndexChange)="changeMode($event)"
+  >
     @for (option of categoryOptions; track option.id) {
       <mat-tab [label]="option.name"></mat-tab>
     }

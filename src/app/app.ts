@@ -1,4 +1,4 @@
-import {Component, OnInit, signal} from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 import { RoadSignPanel } from './components/road-sign-panel/road-sign-panel';
@@ -7,7 +7,7 @@ import { RoadSignPanel } from './components/road-sign-panel/road-sign-panel';
   selector: 'app-root',
   imports: [RouterOutlet, RoadSignPanel],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {
   protected readonly title = signal('learn-pdr');
