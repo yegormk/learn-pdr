@@ -1,33 +1,28 @@
-import {Component, computed, effect, inject, OnInit, signal, WritableSignal} from '@angular/core';
-import {MatButton} from '@angular/material/button';
-import {MatRadioButton, MatRadioGroup} from '@angular/material/radio';
+import { Component, effect, inject, signal, WritableSignal } from '@angular/core';
+import { MatButton } from '@angular/material/button';
+import { MatRadioButton, MatRadioGroup } from '@angular/material/radio';
 
-import {AvailableOptions, RoadSign} from '../../interfaces/road-sign';
-import {NgClass} from '@angular/common';
-import {RoadSignsService} from '../../services/road-signs-service';
-import {MatSnackBar} from '@angular/material/snack-bar';
+import { AvailableOptions } from '../../interfaces/road-sign';
+import { NgClass } from '@angular/common';
+import { RoadSignsService } from '../../services/road-signs-service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-road-sign-card',
-  imports: [
-    MatButton,
-    MatRadioButton,
-    MatRadioGroup,
-    NgClass
-  ],
+  imports: [MatButton, MatRadioButton, MatRadioGroup, NgClass],
   templateUrl: './road-sign-card.html',
   styleUrl: './road-sign-card.scss',
 })
 export class RoadSignCard {
   private roadSignsService = inject(RoadSignsService);
   private _snackBar = inject(MatSnackBar);
-  readonly currentRoadSign =  this.roadSignsService.currentRoadSign;
-  readonly currentCategory =  this.roadSignsService.currentCategory;
+  readonly currentRoadSign = this.roadSignsService.currentRoadSign;
+  readonly currentCategory = this.roadSignsService.currentCategory;
   finalized: WritableSignal<boolean> = signal(false);
   currentlyChosenOption!: string | null;
   currentIndexOfRoadSign!: number;
   lengthOfArrayOfRoadSigns!: number;
-  private readonly changeOfCategory =  effect(() => {
+  private readonly changeOfCategory = effect(() => {
     this.lengthOfArrayOfRoadSigns = this.roadSignsService.currentCategorySigns().length;
     this.initRoadSignQuestion(false);
   });
@@ -53,34 +48,35 @@ export class RoadSignCard {
 
     const currentCategorySigns = [...this.roadSignsService.currentCategorySigns()];
 
-    const indexToUse = this.roadSignsService.currentCategory() === '0' ?
-      Math.floor(Math.random() * this.lengthOfArrayOfRoadSigns) :
-      this.currentIndexOfRoadSign;
+    const indexToUse =
+      this.roadSignsService.currentCategory() === '0'
+        ? Math.floor(Math.random() * this.lengthOfArrayOfRoadSigns)
+        : this.currentIndexOfRoadSign;
 
     const newCurrentRoadSign = currentCategorySigns[indexToUse];
-    currentCategorySigns.splice(indexToUse,1);
+    currentCategorySigns.splice(indexToUse, 1);
 
     const randomIndexToPutCorrectAnswer = Math.floor(Math.random() * 3);
 
     if (newCurrentRoadSign) {
-      newCurrentRoadSign.availableOptions = Array.from({ length: 3 }).map(el => {
-        const indexOfCurrentIncorrectAnswer =
-          Math.floor(Math.random() * currentCategorySigns.length);
+      newCurrentRoadSign.availableOptions = Array.from({ length: 3 }).map(() => {
+        const indexOfCurrentIncorrectAnswer = Math.floor(
+          Math.random() * currentCategorySigns.length,
+        );
 
-        const randomIncorrectAnswer =
-          currentCategorySigns[indexOfCurrentIncorrectAnswer]?.name;
+        const randomIncorrectAnswer = currentCategorySigns[indexOfCurrentIncorrectAnswer]?.name;
 
-        currentCategorySigns.splice(randomIndexToPutCorrectAnswer,1);
+        currentCategorySigns.splice(randomIndexToPutCorrectAnswer, 1);
 
         return {
           name: randomIncorrectAnswer,
-          correct: false
-        }
+          correct: false,
+        };
       }) as AvailableOptions[];
 
       newCurrentRoadSign.availableOptions[randomIndexToPutCorrectAnswer] = {
         name: newCurrentRoadSign.name,
-        correct: true
+        correct: true,
       };
 
       this.currentRoadSign.set(newCurrentRoadSign);
@@ -89,7 +85,7 @@ export class RoadSignCard {
 
   noWay(): void {
     this._snackBar.open('Спробуй хочаб 😉', '', {
-      duration: 1500
+      duration: 1500,
     });
   }
 }

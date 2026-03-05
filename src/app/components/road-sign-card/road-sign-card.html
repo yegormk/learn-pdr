@@ -1,45 +1,50 @@
 <div class="road-sign-wrapper">
   @if (currentRoadSign()) {
-    <div
-        class="road-sign-container"
-    >
-      <img [src]="currentRoadSign().svg" [alt]="currentRoadSign().name" class="road-sign-img">
+    <div class="road-sign-container">
+      <img [src]="currentRoadSign().svg" [alt]="currentRoadSign().name" class="road-sign-img" />
       <p>
-        Назва: {{ finalized() ? (currentRoadSign().id + ' ' + currentRoadSign().name) : '🤔🤔🤔' }}
+        Назва: {{ finalized() ? currentRoadSign().id + ' ' + currentRoadSign().name : '🤔🤔🤔' }}
       </p>
       @if (currentCategory() === '0') {
-        <p style="background-color: #e3a3036e; width: fit-content; border-radius: 5px; padding: 5px 10px">
+        <p
+          style="
+            background-color: #e3a3036e;
+            width: fit-content;
+            border-radius: 5px;
+            padding: 5px 10px;
+          "
+        >
           Категорія: {{ currentRoadSign().category }}
         </p>
       }
       <mat-radio-group
-          aria-label="Select an option"
-          class="road-sign-options"
-          [disabled]="finalized()"
-          (change)="finalizeReset($event.value)"
-          [value]="currentlyChosenOption"
+        aria-label="Select an option"
+        class="road-sign-options"
+        [disabled]="finalized()"
+        (change)="finalizeReset($event.value)"
+        [value]="currentlyChosenOption"
       >
         @for (option of currentRoadSign().availableOptions; track option.name) {
           <mat-radio-button
-              [ngClass]="finalized() ? (option.correct ? 'correct-answer' : 'wrong-answer') : ''"
-              [value]="option.name"
+            [ngClass]="finalized() ? (option.correct ? 'correct-answer' : 'wrong-answer') : ''"
+            [value]="option.name"
           >
             {{ option.name }}
           </mat-radio-button>
         }
       </mat-radio-group>
 
-      <button
-        matButton="elevated"
-        (click)="finalized() ? finalizeReset() : noWay()"
-      >
-        {{ (currentIndexOfRoadSign === lengthOfArrayOfRoadSigns && currentlyChosenOption) ?
-            'Умнічка, знову?)' : 'Наступний' }}
+      <button matButton="elevated" (click)="finalized() ? finalizeReset() : noWay()">
+        {{
+          currentIndexOfRoadSign === lengthOfArrayOfRoadSigns && currentlyChosenOption
+            ? 'Умнічка, знову?)'
+            : 'Наступний'
+        }}
       </button>
 
       @if (currentCategory() !== '0') {
         <p>
-          {{ (currentIndexOfRoadSign + 1) + '/' + (lengthOfArrayOfRoadSigns + 1) }}
+          {{ currentIndexOfRoadSign + 1 + '/' + (lengthOfArrayOfRoadSigns + 1) }}
         </p>
       }
     </div>
